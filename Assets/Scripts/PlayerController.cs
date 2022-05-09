@@ -34,15 +34,13 @@ public class PlayerController : MonoBehaviour
             Destroy(other.gameObject);
             StartCoroutine(PowerupCountdownRoutine());
             powerupIndicator.gameObject.SetActive(true);
-
-            IEnumerator PowerupCountdownRoutine()
-            {
-                yield return new WaitForSeconds(7);
-                hasPowerup = false;
-                powerupIndicator.gameObject.SetActive(false);
-            }
         }
-
+    }
+    IEnumerator PowerupCountdownRoutine()
+    {
+        yield return new WaitForSeconds(7);
+        hasPowerup = false;
+        powerupIndicator.gameObject.SetActive(false);
     }
 
     private void OnCollisionEnter(Collision collision)
